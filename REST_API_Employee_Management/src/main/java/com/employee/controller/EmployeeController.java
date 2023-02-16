@@ -27,7 +27,6 @@ public class EmployeeController {
 	EmployeeService employeeService;
 
 	@PostMapping("/createEmployee")
-
 	public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee, Authentication auth) {
 
 		return ResponseEntity.status(HttpStatus.CREATED).body((employeeService.createEmployee(employee)));
