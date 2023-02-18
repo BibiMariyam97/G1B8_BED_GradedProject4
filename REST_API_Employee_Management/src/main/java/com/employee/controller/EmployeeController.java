@@ -65,7 +65,7 @@ public class EmployeeController {
 	@GetMapping("/sort")
 	public ResponseEntity<List<Employee>> getAllEmployee(
 			@RequestParam(value = "sortBy", defaultValue = "firstname", required = false) String sortBy,
-			@RequestParam(value = "sortDir", defaultValue = "desc", required = false) String sortDir) {
+			@RequestParam(value = "sortDir", defaultValue = "asc", required = false) String sortDir) {
 		List<Employee> allEmp = this.employeeService.findAllEmployees(sortBy, sortDir);
 		return new ResponseEntity<List<Employee>>(allEmp, HttpStatus.OK);
 	}
